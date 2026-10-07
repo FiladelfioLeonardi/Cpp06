@@ -6,7 +6,7 @@
 /*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 18:58:40 by fefo              #+#    #+#             */
-/*   Updated: 2026/10/07 20:14:14 by fefo             ###   ########.fr       */
+/*   Updated: 2026/10/07 20:20:27 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,12 @@ void ScalarConverter::convert(const std::string& literal)
         if (!std::isdigit(literal[0]))
         {
             char character = literal[0];
-            if (std::isalpha(character))
+            if (character > 31 and character < 127)
                 std::cout << "char: '" << character << "'" << std::endl;
             else
-                std::cout << "char: Non Displayable" << std::endl;
+                std::cout << "char: Non displayable" << std::endl;
             std::cout << "int: " << static_cast<int>(character) << std::endl;
-            std::cout << "float: " << static_cast<float>(character) << "f" << std::endl;
+            std::cout << "float: " << static_cast<float>(character) << ".0f" << std::endl;
             std::cout << "double: " << static_cast<double>(character) << ".0" <<std::endl;
         }
         else if (std::isdigit(literal[0]))
